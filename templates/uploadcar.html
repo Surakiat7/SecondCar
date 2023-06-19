@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='car.png') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <title>Second Car</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="/static/css/fontawesome.css">
+    <link rel="stylesheet" href="/static/css/templatemo-space-dynamic.css">
+    <link rel="stylesheet" href="/static/css/animated.css">
+    <link rel="stylesheet" href="/static/css/owl.css">
+<!--
+    
+TemplateMo 562 Space Dynamic
+
+https://templatemo.com/tm-562-space-dynamic
+
+-->
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="home" class="logo">
+              <h4>S E C O N D<span> C A R</span></h4>
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+             <ul class="nav">
+              <li class="scroll-to-section"><a href="home" >หน้าแรก</a></li>
+              <li class="scroll-to-section"><a href="buycaruser">ซื้อรถยนต์</a></li>
+              <li class="scroll-to-section"><a href="uploadcar">ประกาศขาย</a></li>
+              <li class="scroll-to-section"><a href="searchuser">ค้นหารถยนต์</a></li>
+              <li class="scroll-to-section"><a href="promotionuser">โปรโมชั่น</a></li>
+              <li class="scroll-to-section"><a href="profile"><h2>{{name}}</h2></a></li> 
+            </ul>          
+            <a class='menu-trigger'>
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <br>
+  <div class="container bg-white mt-5 mb-1 w-25">
+      <div class="row justify-content-md-center">
+              <div class="p-10 py-5">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                      <h4 class="text-right">Sell Car</h4>
+                  </div>
+                  <form action = "{{ url_for('insertcar') }}" method = "POST" enctype="multipart/form-data">
+                  <div class="row col align-self-center">
+                  เลือกยี่ห้อรถที่คุณต้องการ :
+                  <select id="make" name="make" onchange="myFunction()">
+                        {% for make in make %}
+                        <option value="{{make}}">{{make}}</option>
+                        {% endfor %}
+                  </select>
+                      เลือกรุ่น : <select id="model" name="model"></select>
+                      เลือกจังหวัด : 
+                  <select id="province" name="province">
+                        {% for pro in pro %}
+                        <option value="{{pro.name_th}}">{{pro.name_th}}</option>
+                        {% endfor %}
+                  </select> 
+                       ราคา :
+                      <input type="text" id="price" name="price" maxlength="28" size="28" placeholder="ตัวอย่าง เช่น 10000 (10,000 บาท)">
+                      ปีรถ :
+                      <input type="text" id="year" name="year" maxlength="28" size="28" placeholder="ตัวอย่าง เช่น 1990 ">
+                       ตำหนิ :
+                      <input type="text" id="detail" name="detail"  placeholder="รายละเอียดรอบรถ หรือตำหนิ">
+                      <br><br><br><br>
+                  </div>
+                  <br><br>
+                      <dl>
+                          <p>
+                              <input type="file" name="file1" class="form-control" autocomplete="off" required>
+                          </p>
+                          <p>
+                              <input type="file" name="file2" class="form-control" autocomplete="off" required>
+                          </p>
+                          <p>
+                              <input type="file" name="file3" class="form-control" autocomplete="off" required>
+                          </p>
+                          <p>
+                              <input type="file" name="file4" class="form-control" autocomplete="off" required>
+                          </p>
+                      </dl><br>  <br>
+                  <input type="hidden" name = "ids" value="{{ ids }}"/> 
+                  <input type="submit" value="ลงขาย">
+              </div>
+          <div class="col-md-4">
+              <div class="p-3 py-5">
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+  </div>
+
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.25s">
+          <p>© Copyright 2021 Second Car. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Scripts -->
+
+  <script>
+        function myFunction() {    
+          let carmodel = {{veh | safe}};
+          let count = 0;
+          console.log(carmodel);
+          //console.log(Object.keys(carmodel['veh']));
+          var select_start = "<select>";
+          var options_1_start = "<option value='1'>";
+          var options_1_end = "</option>";
+          var select_end = "</select>";
+          var x = document.getElementById("make");
+          
+          if (x.value in carmodel) {
+            let selectform = `<select>`;
+            for (let i of carmodel[x.value]){
+              selectform += `<option value='${i}'>${i}</option>`;
+            }
+            selectform += `</select>`;
+            document.getElementById("model").innerHTML = selectform;
+          } else {
+            document.getElementById("model").innerHTML = ``
+          }
+        }
+</script>
+  <script src="/static/jquery.min.js"></script>
+  <script src="/static/bootstrap.bundle.min.js"></script>
+  <script src="/static/js/owl-carousel.js"></script>
+  <script src="/static/js/animation.js"></script>
+  <script src="/static/js/imagesloaded.js"></script>
+  <script src="/static/js/templatemo-custom.js"></script>
+
+</body>
+</html>

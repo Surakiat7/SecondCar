@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='car.png') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <title>Second Car</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="/static/css/fontawesome.css">
+    <link rel="stylesheet" href="/static/css/templatemo-space-dynamic.css">
+    <link rel="stylesheet" href="/static/css/animated.css">
+    <link rel="stylesheet" href="/static/css/owl.css">
+<!--
+    
+TemplateMo 562 Space Dynamic
+
+https://templatemo.com/tm-562-space-dynamic
+
+-->
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="home" class="logo">
+              <h4>S E C O N D<span> C A R</span></h4>
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="home" >หน้าแรก</a></li>
+              <li class="scroll-to-section"><a href="buycaruser">ซื้อรถยนต์</a></li>
+              <li class="scroll-to-section"><a href="uploadcar">ประกาศขาย</a></li>
+              <li class="scroll-to-section"><a href="searchuser">ค้นหารถยนต์</a></li>
+              <li class="scroll-to-section"><a href="promotionuser">โปรโมชั่น</a></li>
+              <li class="scroll-to-section"><a href="profile"><h2>{{name}}</h2></a></li> 
+            </ul>         
+            <a class='menu-trigger'>
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <br>
+  <div class="container rounded bg-white mt-5 mb-5">
+      <div class="row">
+          <div class="col-md-5 border-right">
+           
+              <div class="p-3 py-5">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                      <h4 class="text-right">แก้ไขข้อมูลส่วนตัว</h4>
+                  </div>
+                  <form action = "{{ url_for('insertuser') }}" method = "POST" enctype="multipart/form-data"> 
+                  <div class="row mt-2">
+                      <div class="col-md-6"><label class="labels">ชื่อจริง</label><input type="text" name = "name" class="form-control" placeholder="{{name}}" value=""></div>
+                      <div class="col-md-6"><label class="labels">นาม-สกุล</label><input type="text" name = "lastname" class="form-control" value="" placeholder="{{lastname}}"></div>
+                  </div>
+                  <div class="row mt-3">
+                      <div class="col-md-12"><label class="labels">เบอร์โทรศัพท์</label><input type="text" name = "Phone" class="form-control" placeholder="{{Phone}}" value="">asdasdads</div>
+                      <div class="col-md-12"><label class="labels">ที่อยู่</label><input type="text"  name = "address" class="form-control" placeholder="{{address}}" value=""></div>
+                      <div class="col-md-12"><label class="labels">อีเมลล์</label><input type="email"  name = "email" class="form-control" placeholder="{{email}}" value=""></div>
+                      <div class="col-md-12"><label class="labels">อาชีพ</label><input type="text" name = "occupation" class="form-control" placeholder="{{occupation}}" value=""></div>
+                  </div>
+                  <div class="row mt-3">
+                      <div class="col-md-6"><label class="labels">รหัสบัตรประจำตัวประชาชน</label><input type="text" name = "ctzid" class="form-control" placeholder="{{ctzid}}" value=""></div>
+                      <div class="col-md-6"><label class="labels">รหัสผ่าน</label><input type="password" name = "password" class="form-control" value="" placeholder=""></div>
+                  </div><br>
+                  <div align="center">
+                  <input type="file" name = "file" class="form-control" id="file" autocomplete="off" required>
+                  <input type="hidden" name = "ids" value="{{ ids }}"/><br>
+                  <input type="submit" value="บันทึกข้อมูล" >
+                  </form>
+                  </div>
+              </div>
+          
+          </div>
+      </div>
+  </div>
+  </div>
+  </div>
+
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.25s">
+          <p>© Copyright 2021 Second Car. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Scripts -->
+  <script src="/static/jquery.min.js"></script>
+  <script src="/static/bootstrap.bundle.min.js"></script>
+  <script src="/static/js/owl-carousel.js"></script>
+  <script src="/static/js/animation.js"></script>
+  <script src="/static/js/imagesloaded.js"></script>
+  <script src="/static/js/templatemo-custom.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='car.png') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <title>Second Car</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="/static/css/fontawesome.css">
+    <link rel="stylesheet" href="/static/css/templatemo-space-dynamic.css">
+    <link rel="stylesheet" href="/static/css/animated.css">
+    <link rel="stylesheet" href="/static/css/owl.css">
+	<link rel="stylesheet" href="/static/css/login.css">
+<!--
+    
+TemplateMo 562 Space Dynamic
+
+https://templatemo.com/tm-562-space-dynamic
+
+-->
+  </head>
+
+<body>
+<a href="index.html" class="logo">
+              <h4>S E C O N D &nbsp;<span> C A R</span></h4>
+</a>
+<div class="container" id="container">
+	<div class="form-container sign-in-container">
+		<form action="{{ url_for('login') }}" method="post">
+				<h5>Create Account</h5>
+				<h2>or use your email for registration</h2><br>
+				<input type="email" name="email" placeholder="อีเมลล์" id="email" required>
+				<input type="password" name="password" placeholder="รหัสผ่าน" id="password" required>
+				<div class="msg">{{ msg }}</div>
+				<input type="submit" value="ล็อกอิน">
+			</form>
+	</div>
+	<div class="form-container sign-up-container">
+		<form action="{{ url_for('register') }}" method="post" autocomplete="off">
+				<input type="text" name="name" placeholder="ชื่อ" id="name" required>
+				<input type="text" name="lastname" placeholder="นามสกุล" id="lastname" required>
+				<input type="email" name="email" placeholder="อีเมลล์" id="email" required>
+				<input type="password" name="password" placeholder="รหัสผ่าน" id="password" required>
+				<input type="text" name="ctzid" placeholder="รหัสบัตรประชาชน" id="ctzid" required>		
+				<input type="text" name="phone" placeholder="เบอร์โทรศัพท์" id="phone" required>
+				<div class="msg">{{ msg }}</div>
+				<input type="submit" value="ลงทะเบียน">
+			</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h6>Welcome Back!</h6>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h3>Hello, Friend!</h3>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+  <!-- Scripts -->
+  <script src="/static/jquery.min.js"></script>
+  <script src="/static/bootstrap.bundle.min.js"></script>
+  <script src="/static/js/owl-carousel.js"></script>
+  <script src="/static/js/animation.js"></script>
+  <script src="/static/js/imagesloaded.js"></script>
+  <script src="/static/js/templatemo-custom.js"></script>
+<script>
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='car.png') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <title>Second Car</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="/static/css/fontawesome.css">
+    <link rel="stylesheet" href="/static/css/templatemo-space-dynamic.css">
+    <link rel="stylesheet" href="/static/css/animated.css">
+    <link rel="stylesheet" href="/static/css/owl.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/main.css">
+<!--
+    
+TemplateMo 562 Space Dynamic
+
+https://templatemo.com/tm-562-space-dynamic
+
+-->
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="home" class="logo">
+              <h4>S E C O N D<span> C A R</span></h4>
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="home" >หน้าแรก</a></li>
+              <li class="scroll-to-section"><a href="buycaruser">ซื้อรถยนต์</a></li>
+              <li class="scroll-to-section"><a href="uploadcar">ประกาศขาย</a></li>
+              <li class="scroll-to-section"><a href="searchuser">ค้นหารถยนต์</a></li>
+              <li class="scroll-to-section"><a href="promotionuser">โปรโมชั่น</a></li>
+              <li class="scroll-to-section"><a href="profile"><h1>{{name}}</h1></a></li> 
+            </ul>           
+            <a class='menu-trigger'>
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <br><br><br><br><br><br>
+  <div class="container bootstrap snippets bootdey">
+<div class="row">
+  <div class="profile-nav col-md-3">
+      <div class="panel">
+          <div class="user-heading round">
+              <a href="/static/upload/user/{{imguser}}">
+                  <img src="/static/upload/user/{{imguser}}" alt="">
+              </a>
+              <h1><br>TETHEXRUS</h1><br>
+              <div class="container">
+              <form action="{{ url_for('editprofile') }}" method="post">
+                <input type="hidden" name = "ids" value="{{ ids }}"/>
+                <input type="hidden" name = "name" value="{{ name }}"/>
+                <input type="hidden" name = "lastname" value="{{ lastname }}"/>
+                <input type="hidden" name = "address" value="{{ address }}"/>
+                <input type="hidden" name = "occupation" value="{{ occupation }}"/>
+                <input type="hidden" name = "email" value="{{ email }}"/>
+                <input type="hidden" name = "Phone" value="{{ Phone }}"/>
+                <input type="hidden" name = "ctzid" value="{{ ctzid }}"/>
+                <input type="hidden" name = "password" value="{{ password }}"/>
+                <input type="hidden" name = "imguser" value="{{ imguser }}"/>
+                <button class="btn">แก้ไขข้อมูล</button> 
+              </form> 
+              </div>
+              
+          </div>
+      </div>
+  </div>
+  <div class="profile-info col-md-9">
+      <div class="panel">
+          <div class="bio-graph-heading">
+              ข้อมูลของคุณ ข้อมูลบางส่วนอาจจะต้องเพิ่มหลังจากสมัครใช้งานแล้ว
+          </div>
+          <div class="panel-body bio-graph-info">
+              <h1><br>ข้อมูลส่วนตัว</h1>
+              <div class="row">
+                  <div class="bio-row">
+                      <p><span>ชื่อจริง </span>: {{name}}</p>
+                  </div>
+                  <div class="bio-row">
+                      <p><span>นาม-สกุล </span>: {{lastname}}</p>
+                  </div>
+                  <div class="bio-row">
+                      <p><span>ที่อยู่ </span>: {{address}}</p>
+                  </div>
+                  <div class="bio-row">
+                      <p><span>อาชีพ </span>: {{occupation}}</p>
+                  </div>
+                  <div class="bio-row">
+                      <p><span>อีเมลล์ </span>: {{email}}</p>
+                  </div>
+                  <div class="bio-row">
+                      <p><span>เบอร์โทรศัพท์ </span>: {{Phone}}</p>
+                  </div>
+                  <div class="bio-row">
+                      <a href="/logout">ออกจากระบบ</a>
+                  </div>
+                  <div class="bio-row">
+                      <a href="/listcar">ดูรายการรถของคุณ</a>
+                  </div>
+              </div>
+          </div>
+          
+      </div>
+  </div>
+</div>
+</div><br><br>><br><br><br><br><br><br>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.25s">
+          <p>© Copyright 2021 Second Car. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Scripts -->
+  <script src="/static/jquery.min.js"></script>
+  <script src="/static/bootstrap.bundle.min.js"></script>
+  <script src="/static/js/owl-carousel.js"></script>
+  <script src="/static/js/animation.js"></script>
+  <script src="/static/js/imagesloaded.js"></script>
+  <script src="/static/js/templatemo-custom.js"></script>
+
+</body>
+</html>

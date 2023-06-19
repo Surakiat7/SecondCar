@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='car.png') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <title>Second Car</title>
+    <style>
+    .mySlides {display:none;}
+    </style>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="/static/css/fontawesome.css">
+    <link rel="stylesheet" href="/static/css/templatemo-space-dynamic.css">
+    <link rel="stylesheet" href="/static/css/animated.css">
+    <link rel="stylesheet" href="/static/css/owl.css">
+<!--
+    
+TemplateMo 562 Space Dynamic
+
+https://templatemo.com/tm-562-space-dynamic
+
+-->
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="/" class="logo">
+              <h4>S E C O N D<span> C A R</span></h4>
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="/" >หน้าแรก</a></li>
+              <li class="scroll-to-section"><a href="buycar">ซื้อรถยนต์</a></li>
+              <li class="scroll-to-section"><a href="search">ค้นหารถยนต์</a></li>
+              <li class="scroll-to-section"><a href="promotion" class="active">โปรโมชั่น</a></li>
+              <li class="scroll-to-section"><div class="main-red-button"><a href="login">Login</a></div></li> 
+            </ul>        
+            <a class='menu-trigger'>
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+  <br><br><br>
+  <div class="w3-container">
+  <br><br>
+  </div>
+
+    <div class="w3-content w3-display-container" >
+
+    <div class="w3-display-container mySlides">
+      <a href="https://www.autodeft.com/newcar/2022-bmw-3-series-gran-sedan-320li-luxury-long-wheelbase-revealed-official-thailand" ><img src="/static/images/pro1.png" width="400" height="550" alt=""></a>
+      <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+        New car 2022 BMW 320Li Luxury
+      </div>
+    </div>
+
+    <div class="w3-display-container mySlides">
+      <a href="https://www.autodeft.com/newcar/2022-bmw-3-series-gran-sedan-320li-luxury-long-wheelbase-revealed-official-thailand"><img src="/static/images/pro2.png" width="400" height="550" alt=""></a>
+      <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+        New car KIA Carnival MY2022
+      </div>
+    </div>
+
+    <div class="w3-display-container mySlides">
+      <a href="https://www.honda.co.th/promotions/detail/promotion-crv-sep2021?utm_source=datapartnerBanner&utm_medium=autodeft&utm_campaign=autodeft"><img src="/static/images/pro3.png" width="400" height="550" alt=""></a>
+      <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+        ข้อเสนอสุดพิเศษ ดอกเบี้ย 0 % พร้อมรับ ฮอนด้า อัลติเมท แคร์
+      </div>
+    </div>
+
+    <div class="w3-display-container mySlides">
+      <a href="https://www.gwm.co.th/car-haval-h6/?utm_source=Facebook"><img src="/static/images/pro4.png" width="400" height="550" alt=""></a>
+      <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+        All new HAVAL H6 เริ่มต้นที่ 1,149,000 บาท
+      </div>
+    </div>
+
+
+
+    <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+    <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+
+    </div>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.25s">
+          <p>© Copyright 2021 Second Car. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Scripts -->
+  <script src="/static/jquery.min.js"></script>
+  <script src="/static/bootstrap.bundle.min.js"></script>
+  <script src="/static/js/owl-carousel.js"></script>
+  <script src="/static/js/animation.js"></script>
+  <script src="/static/js/imagesloaded.js"></script>
+  <script src="/static/js/templatemo-custom.js"></script>
+  <script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      if (n > x.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      x[slideIndex-1].style.display = "block";  
+    }
+    </script>
+
+</body>
+</html>

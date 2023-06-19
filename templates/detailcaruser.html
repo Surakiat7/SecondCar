@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='car.png') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <title>Second Car</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="/static/css/fontawesome.css">
+    <link rel="stylesheet" href="/static/css/templatemo-space-dynamic.css">
+    <link rel="stylesheet" href="/static/css/animated.css">
+    <link rel="stylesheet" href="/static/css/owl.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<!--
+    
+TemplateMo 562 Space Dynamic
+
+https://templatemo.com/tm-562-space-dynamic
+
+-->
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="home" class="logo">
+              <h4>S E C O N D<span> C A R</span></h4>
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="home" >หน้าแรก</a></li>
+              <li class="scroll-to-section"><a href="buycaruser">ซื้อรถยนต์</a></li>
+              <li class="scroll-to-section"><a href="uploadcar">ประกาศขาย</a></li>
+              <li class="scroll-to-section"><a href="searchuser">ค้นหารถยนต์</a></li>
+              <li class="scroll-to-section"><a href="promotionuser">โปรโมชั่น</a></li>
+              <li class="scroll-to-section"><a href="profile"><h2>{{name}}</h2></a></li> 
+            </ul>         
+            <a class='menu-trigger'>
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+  <div id="about" class="about-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+        
+          <div class="left-image wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+            <img src="/static/upload/car/{{imgcar_1}}" alt="person graphic">
+          </div>
+        </div>
+        <div class="col-lg-8 align-self-center">
+          <div class="services">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                  <div class="icon">
+                    <img src="/static/images/service-icon-01.png" alt="reporting">
+                  </div>
+                  <div class="right-text">
+                  <h2>รายละเอียดรถ</h2> &nbsp; <a href="#"><i class="fas fa-comment fa-2x"></i></a><br>
+                    <h4>ยี่ห้อ {{make}} รุ่น {{model}}  ราคา {{price}} บาท</h4>
+                    <p><b>Detail : </b><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{detail}}
+
+<br>
+<B>ติดต่อ : </B>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>ชื่อเจ้าของรถ : </B>{{Name}} {{Lastname}}
+&nbsp;<B>หมายเลขโทรศัพท์ : </B> {{Phone}}
+&nbsp;<B>E-mail : </B> {{Email}}
+</p><p><b>สถานะรถ : </b>&nbsp; {{sell_status}}</p>
+                  </div>
+                </div>
+              </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="portfolio" class="our-portfolio section">
+    <div class="container">
+      <div class="row">
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-sm-6">
+          <a href="#">
+            <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+              <div class="hidden-content">
+                <h4>รูปที่ 1</h4>
+                <p>รูปรายละเอียดรถ.</p>
+              </div>
+              <div class="showed-content">
+                <img src="/static/upload/car/{{imgcar_1}}" alt="">
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <a href="#">
+            <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.4s" >
+              <div class="hidden-content" >
+                <h4>รูปที่ 2</h4>
+                <p>รูปรายละเอียดรถ.</p>
+              </div>
+              <div class="showed-content">
+                <img src="/static/upload/car/{{imgcar_2}}" alt="">
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <a href="#">
+            <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+              <div class="hidden-content">
+                <h4>รูปที่ 3</h4>
+                <p>รูปรายละเอียดรถ.</p>
+              </div>
+              <div class="showed-content">
+                <img src="/static/upload/car/{{imgcar_3}}" alt="">
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <a href="#">
+            <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.6s">
+              <div class="hidden-content">
+                <h4>รูปที่ 4</h4>
+                <p>รูปรายละเอียดรถ.</p>
+              </div>
+              <div class="showed-content">
+                <img src="/static/upload/car/{{imgcar_4}}" alt="">
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div><br><br><br><br><br>
+  <div class="w3-container" align="center">
+   <form id="favorite" action="{{ url_for('favorite') }}" method="post">
+    <input type="submit" class="w3-button w3-black" value="เพิ่มไปที่รายการที่ชื่นชอบ">
+    <input type="hidden" name = "idscar" value="{{ idscar }}"/> 
+    <input type="hidden" name = "iduser" value="{{ iduser }}"/> 
+  </form>
+  </div>
+
+    <div class="container mt-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-8">
+            <div class="headings d-flex justify-content-between align-items-center mb-3">
+                <h5>Comments</h5>
+                <div class="buttons"> <span class="badge bg-white d-flex flex-row align-items-center"> 
+                        <div class="form-check form-switch"> <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked> </div>
+                    </span> </div>
+            </div>
+            {% for com in com %}
+            <div class="card p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="user d-flex flex-row align-items-center"> <span><small class="font-weight-bold text-primary">{{ com['Name'] }} {{ com['Lastname'] }}</small> <br><small class="font-weight-bold">{{ com['occupation'] }}</small></span> </div> <small>{{ com['comment'] }}</small>
+                </div>
+                <div class="action d-flex justify-content-between mt-2 align-items-center">
+                    <div class="reply px-4">  </div>
+                    <div class="icons align-items-center"> 💬 </div>
+                </div>
+            </div>
+            {% endfor %}   
+        </div>
+    </div>
+</div>
+  <div id="contact" class="contact-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 align-self-center wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay="0.25s">
+          <div class="section-heading">
+            <h2>แสดงความคิดเห็น</h2>
+          </div>
+        </div>
+        <div class="col-lg-6 wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="0.25s">
+          <form id="contact" action="{{ url_for('comments') }}" method="post">
+            <div class="row">
+              <div class="col-lg-6">
+                <fieldset>
+                  <h3>คุณ&nbsp;{{name}}</h3><br>
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <textarea name="comment" type="text" class="form-control" id="comment" placeholder="Message" required=""></textarea>  
+                </fieldset>
+              </div>
+              <input type="hidden" name = "idscar" value="{{ idscar }}"/> 
+              <input type="hidden" name = "iduser" value="{{ iduser }}"/> 
+              <input type="hidden" name = "occupation" value="{{ occupation }}"/> 
+              <input type="hidden" name = "name" value="{{ name }}"/> 
+              <input type="hidden" name = "lastname" value="{{ lastname }}"/> 
+              <div class="col-lg-12">
+                <fieldset>
+                  <button type="submit" id="form-submit" class="main-button ">Send Message</button>
+                </fieldset>
+              </div>
+            </div>
+            <div class="contact-dec">
+              <img src="/static/images/contact-decoration.png" alt="">
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.25s">
+          <p>© Copyright 2021 Second Car. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Scripts -->
+  <script src="/static/jquery.min.js"></script>
+  <script src="/static/bootstrap.bundle.min.js"></script>
+  <script src="/static/js/owl-carousel.js"></script>
+  <script src="/static/js/animation.js"></script>
+  <script src="/static/js/imagesloaded.js"></script>
+  <script src="/static/js/templatemo-custom.js"></script>
+</body>
+</html>
